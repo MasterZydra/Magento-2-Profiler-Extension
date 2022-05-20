@@ -1,14 +1,17 @@
-# Magento-2-Profiler-Extension
+# Magento 2 Profiler-Extension
 **Content**  
 - [Features](#features)
   - [Color highlighting of indentation depth](#color-highlighting-of-indentation-depth)
   - [Filter](#filter)
 - [How to use](#how-to-use)
 
-JS to extend the styling and functionality of the default Magento 2 profiler
+The vision is a profiler similar to the [AOE Profiler for Magento 1](https://github.com/AOEpeople/Aoe_Profiler). The profiler extension shall use JS and CSS to add the styling and functionality based on the basic table returned by Magento 2.
 
 The default profiler:
 ![](https://github.com/MasterZydra/Magento-2-Profiler-Extension/blob/main/doc/img/plainProfiler.jpeg)
+
+The profiler with the extension:
+![](https://github.com/MasterZydra/Magento-2-Profiler-Extension/blob/main/doc/img/extProfiler.jpeg)
 
 ## Features
 ### Color highlighting of indentation depth
