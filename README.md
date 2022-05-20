@@ -7,6 +7,8 @@
 
 The vision is a profiler similar to the [AOE Profiler for Magento 1](https://github.com/AOEpeople/Aoe_Profiler). The profiler extension shall use JS and CSS to add the styling and functionality based on the basic table returned by Magento 2.
 
+In the future the extension shall be available as package via the composer for an easy integration.
+
 The default profiler:
 ![](https://github.com/MasterZydra/Magento-2-Profiler-Extension/blob/main/doc/img/plainProfiler.jpeg)
 
