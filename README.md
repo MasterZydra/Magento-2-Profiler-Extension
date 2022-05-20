@@ -1,4 +1,10 @@
 # Magento-2-Profiler-Extension
+**Content**  
+- [Features](#features)
+  - [Color highlighting of indentation depth](#color-highlighting-of-indentation-depth)
+  - [Filter](#filter)
+- [How to use](#how-to-use)
+
 JS to extend the styling and functionality of the default Magento 2 profiler
 
 The default profiler:
