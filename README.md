@@ -29,5 +29,5 @@ A minimum time is supported as a filter. All entries which are below the given t
 ![](https://github.com/MasterZydra/Magento-2-Profiler-Extension/blob/main/doc/img/extProfiler.jpeg)
 
 ## How to use
-Add the `profiler.less` and `profilerExt.js` to your Magento instance.  
-If the profiler is activated, call the function `extendCodeProfiler()`.
+Copy the `MasterZydra/ProfilerExtension` folder into the `app/code` folder of your Magento 2 instance.  
+If the code profiler is enabled, the extension will add the JavaScript function call to the footer.
