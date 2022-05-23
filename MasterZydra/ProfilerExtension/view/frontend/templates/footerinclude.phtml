@@ -1,0 +1,15 @@
+<?php
+/**
+ * @var $block \MasterZydra\ProfilerExtension\Block\FooterInclude
+ */
+?>
+<div>
+<?php if ($block->isProfilerEnabled()): ?>
+    <script>
+        require([
+        'jquery',
+        'MasterZydra_ProfilerExtension/js/profilerExt'
+    ], function($, profilerExt) {});
+    </script>
+<?php endif; ?>
+</div>
