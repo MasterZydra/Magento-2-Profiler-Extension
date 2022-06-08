@@ -1,6 +1,7 @@
 # Magento 2 Profiler-Extension
 **Content**  
 - [Installation](#installation)
+- [Updating to latest version](#updating-to-latest-version)
 - [How it works](#how-it-works)
 - [Features](#features)
   - [Color highlighting of indentation depth](#color-highlighting-of-indentation-depth)
@@ -21,6 +22,13 @@ This Magento2 module can be installed using composer:
 
 To remove it from the list of required packages use the following command:  
 `> composer remove masterzydra/module-profilerextension`
+
+## Updating to latest version
+With the following command composer checks all packages in the composer.json for the latest version:  
+`> composer update`
+
+If you only want to check this package for newer versions, you can use  
+`> composer update masterzydra/module-profilerextension`
 
 ## How it works
 After installing the package via composer, the module calls a JavaScript function in the footer. This function will detect the profiler table, adds the filters and adds the classes for the CSS.
