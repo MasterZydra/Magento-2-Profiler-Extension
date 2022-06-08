@@ -4,6 +4,7 @@
 - [How it works](#how-it-works)
 - [Features](#features)
   - [Color highlighting of indentation depth](#color-highlighting-of-indentation-depth)
+  - [Collapsing subordinate entries](#collapsing-subordinate-entries)
   - [Filter](#filter)
 
 The vision is a profiler similar to the [AOE Profiler for Magento 1](https://github.com/AOEpeople/Aoe_Profiler). The profiler extension shall use JS and CSS to add the styling and functionality based on the basic table returned by Magento 2.
@@ -33,9 +34,12 @@ After installing the package via composer, the module calls a JavaScript functio
 ## Features
 ### Color highlighting of indentation depth
 The extended profiler uses colors to better visualize the indentation depth.
-By clicking on a line, the subordinate entries are shown or hidden.
 
 ![](/doc/img/extProfiler_color.jpeg)
+
+### Collapsing subordinate entries
+By clicking on a line, the subordinate entries are shown or hidden.
+![](/doc/img/extProfiler_collapsed.jpg)
 
 ### Filter
 Another feature are filters to limit the view to only relevant entries.
