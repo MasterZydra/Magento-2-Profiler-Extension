@@ -2,8 +2,7 @@
     "name": "masterzydra/module-profilerextension",
     "description": "A visual and functional extension of the standard Magento 2 profiler",
     "type": "magento2-module",
-    "version": "0.0.1",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "David Hein",
@@ -11,13 +10,15 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": ">=7.4.0"
+    },
     "autoload": {
         "files": [
-            "registration.php"
+            "src/app/code/MasterZydra/ProfilerExtension/registration.php"
         ],
         "psr-4": {
-            "MasterZydra\\ProfilerExtension\\": ""
+            "MasterZydra\\ProfilerExtension\\": "src/app/code/MasterZydra/ProfilerExtension"
         }
     }
 }
