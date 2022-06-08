@@ -9,11 +9,11 @@
 
 The vision is a profiler similar to the [AOE Profiler for Magento 1](https://github.com/AOEpeople/Aoe_Profiler). The profiler extension shall use JS and CSS to add the styling and functionality based on the basic table returned by Magento 2.
 
-The default profiler:
-![](/doc/img/plainProfiler.jpeg)
+The default profiler:  
+<img src="/doc/img/plainProfiler.jpeg" width="700">
 
-The profiler with the extension:
-![](/doc/img/extProfiler.jpeg)
+The profiler with the extension:  
+<img src="/doc/img/extProfiler.jpeg" width="700">
 
 ## Installation
 This Magento2 module can be installed using composer:  
@@ -35,14 +35,15 @@ After installing the package via composer, the module calls a JavaScript functio
 ### Color highlighting of indentation depth
 The extended profiler uses colors to better visualize the indentation depth.
 
-![](/doc/img/extProfiler_color.jpeg)
+<img src="/doc/img/extProfiler_color.jpeg" width="700">
 
 ### Collapsing subordinate entries
 By clicking on a line, the subordinate entries are shown or hidden.
-![](/doc/img/extProfiler_collapsed.jpg)
+
+<img src="/doc/img/extProfiler_collapsed.jpg" width="700">
 
 ### Filter
 Another feature are filters to limit the view to only relevant entries.
 A minimum time is supported as a filter. All entries which are below the given time will be hidden.
 
-![](/doc/img/extProfiler.jpeg)
+<img src="/doc/img/extProfiler.jpeg" width="700">
