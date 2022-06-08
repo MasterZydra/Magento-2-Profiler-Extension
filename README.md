@@ -21,6 +21,8 @@ The default profiler:
 The profiler with the extension:  
 <img src="/doc/img/extProfiler.jpeg" width="700">
 
+[Package on Packagist.org](https://packagist.org/packages/masterzydra/module-profilerextension)
+
 ## Installation
 This Magento2 module can be installed using composer:  
 `> composer require masterzydra/module-profilerextension`
