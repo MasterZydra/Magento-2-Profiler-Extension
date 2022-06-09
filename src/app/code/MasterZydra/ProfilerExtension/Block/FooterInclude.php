@@ -1,7 +1,7 @@
 <?php
 /**
  * Copyright ©  All rights reserved.
- * See COPYING.txt for license details.
+ * See License.txt for license details.
  */
 declare(strict_types=1);
 
