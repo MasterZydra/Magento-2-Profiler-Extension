@@ -94,22 +94,35 @@ require([
             }
 
             // Add filter options
-            $("<div><h3>Filter</h3>" +
-            "<label for=\"minTime\">Min Time:</label><input id=\"minTime\" placeholder=\"e.g. 1.5\" style=\"width: auto;\" type=\"number\">" +
-            "<br/><button id=\"filterApply\" type=\"button\">Apply</button>" +
-            "<button id=\"filterClear\" type=\"button\">Clear</button>" +
+            $("<div style=\"margin-left: 10px;\"><h3>Filter</h3>" +
+            "<label for=\"filterTimeId\">Timer Id:</label><input id=\"filterTimeId\" placeholder=\"e.g. cache_load\" style=\"width: auto;margin-left: 5px;margin-right: 10px;\" type=\"text\">" +
+            "<label for=\"minTime\">Min Time:</label><input id=\"minTime\" placeholder=\"e.g. 1.5\" style=\"width: auto;margin-left: 5px;margin-right: 10px;\" type=\"number\">" +
+            "<br/><div style=\"margin: 10px 0 10px 0;\"><button id=\"filterApply\" type=\"button\">Apply</button>" +
+            "<button id=\"filterClear\" type=\"button\">Clear</button></div>" +
             "</div>").insertBefore(".profiler");
+
+            var filterKeypressEvent = function(event) {
+                if (event.which != 13) {
+                    return;
+                }
+                profilerExt.applyFilter();
+            };
+
+            $("#minTime").on("keypress", filterKeypressEvent);
+            $("#filterTimeId").on("keypress", filterKeypressEvent);
 
             $("#filterApply").click(profilerExt.applyFilter);
 
             $("#filterClear").click(function() {
                 $("#minTime").val("");
+                $("#filterTimeId").val("");
                 profilerExt.applyFilter();
             });
         },
 
         applyFilter: function () {
             var minTime = parseFloat($("#minTime").val());
+            var timerId = $("#filterTimeId").val();
 
             $(".profiler tbody tr[level]").each(function() {
                 var self = $(this);
@@ -119,12 +132,52 @@ require([
                     this.hidden = false;
                 }
 
+                // Time filter
                 if (!isNaN(minTime)) {
                     var lineTime = parseFloat(self.children('td').eq(1).text());
                     if (lineTime < minTime) {
                         self.addClass("filtered");
                         this.hidden = true;
                         self.removeClass("collapsed");
+                        return;
+                    }
+                }
+
+                // Timer Id filter
+                if (timerId != "") {
+                    var lineTimerId = self.children('td').eq(0).text();
+
+                    if (!lineTimerId.toLowerCase().includes(timerId)) {
+                        // If current timer id does not contain the search text, hide it.
+                        self.addClass("filtered");
+                        this.hidden = true;
+                        self.removeClass("collapsed");
+                        return;
+                    } else {
+                        // Otherwise show all previous siblings that have a lower level than the visible element
+                        var lastLevel = parseInt($(this).attr("level"));
+                        var prevSibling = this.previousElementSibling;
+                        while (prevSibling) {
+                            // If lastLevel is 0, the previous sibling cannot have a lower level.
+                            if (lastLevel == 0) {
+                                break;
+                            }
+                            var prevSiblingLevel = parseInt($(prevSibling).attr("level"));
+                            // Skip siblings that have same or higher level
+                            if (lastLevel == prevSiblingLevel || lastLevel < prevSiblingLevel) {
+                                prevSibling = prevSibling.previousElementSibling;
+                                continue;
+                            }
+
+                            var isFiltered = $(prevSibling).hasClass("filtered");
+                            if (isFiltered) {
+                                $(prevSibling).removeClass("filtered");
+                                prevSibling.hidden = false;
+                            }
+
+                            lastLevel = prevSiblingLevel;
+                            prevSibling = prevSibling.previousElementSibling;
+                        }
                     }
                 }
             });

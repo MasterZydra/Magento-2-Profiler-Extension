@@ -59,6 +59,7 @@ By clicking on a line, the subordinate entries are shown or hidden.
 
 ### Filter
 Another feature are filters to limit the view to only relevant entries.
-A minimum time is supported as a filter. All entries which are below the given time will be hidden.
+You can filter for a timer id that contains a given text or for timers with a given minimum time.
+If you add multiple filters all filters must match.
 
 <img src="https://github.com/MasterZydra/Magento-2-Profiler-Extension/blob/main/doc/img/extProfiler.jpeg" width="700">
