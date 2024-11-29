@@ -1,8 +1,3 @@
-[![Latest Stable Version](http://poser.pugx.org/masterzydra/module-profilerextension/v)](https://packagist.org/packages/masterzydra/module-profilerextension)
-[![Total Downloads](http://poser.pugx.org/masterzydra/module-profilerextension/downloads)](https://packagist.org/packages/masterzydra/module-profilerextension)
-[![PHP Version Require](http://poser.pugx.org/masterzydra/module-profilerextension/require/php)](https://packagist.org/packages/masterzydra/module-profilerextension)
-[![License](http://poser.pugx.org/masterzydra/module-profilerextension/license)](https://packagist.org/packages/masterzydra/module-profilerextension)
-
 # Magento 2 Profiler-Extension
 **Content**  
 - [Installation](#installation)
